@@ -1,0 +1,9 @@
+---
+
+python_repo: ppa:jonathonf/python-3.6
+python_packages:
+  - python3.6
+  - python3.6-dev
+  - python-pip
+  - python3-pip
+python_python: /usr/bin/python3.6

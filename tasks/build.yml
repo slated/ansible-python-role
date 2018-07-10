@@ -1,0 +1,13 @@
+---
+# tasks for python
+
+- name: Add python repository
+  apt_repository:
+    repo: "{{ python_repo }}"
+
+- name: Install python apt packages
+  apt:
+    update_cache: yes
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ python_packages }}"
