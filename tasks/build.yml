@@ -1,13 +1,18 @@
 ---
 # tasks for python
 
+- stat: path='{{ python_python }}'
+  register: python_python_file
+  tags: [python, build]
+
 - name: Add python repository
   apt_repository:
-    repo: "{{ python_repo }}"
+    repo: '{{ python_repo }}'
+  when: not python_python_file.stat.exists
 
 - name: Install python apt packages
   apt:
     update_cache: yes
-    name: "{{ item }}"
+    name: '{{ item }}'
     state: present
-  with_items: "{{ python_packages }}"
+  with_items: '{{ python_packages }}'

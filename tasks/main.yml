@@ -1,12 +1,6 @@
 ---
-# main tasks for python - skip if python found
-
-- name: Get python path
-  stat: path='{{ python_python }}'
-  register: python_python_file
-  tags: [python, build]
+# main tasks for python
 
 - import_tasks: build.yml
   become: yes
   tags: [python, build]
-  when: not python_python_file.stat.exists
