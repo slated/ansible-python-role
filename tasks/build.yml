@@ -5,14 +5,17 @@
   register: python_python_file
   tags: [python, build]
 
+- name: Remove old python repository
+  apt_repository:
+    repo: ppa:jonathonf/python-3.6
+    state: absent
+
 - name: Add python repository
   apt_repository:
     repo: '{{ python_repo }}'
-  when: not python_python_file.stat.exists
 
 - name: Install python apt packages
   apt:
     update_cache: yes
-    name: '{{ item }}'
+    name: '{{ python_packages }}'
     state: present
-  with_items: '{{ python_packages }}'
