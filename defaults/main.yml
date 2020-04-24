@@ -6,4 +6,5 @@ python_packages:
   - python3.8-dev
   - python-pip
   - python3-pip
+  - python3.8-distutils
 python_python: /usr/bin/python3.8
