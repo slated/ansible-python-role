@@ -16,10 +16,10 @@ Role Variables
 
 Pick your python. These are the defaults
 
-    python_repo: ppa:jonathonf/python-3.6
-    python_package: python3.6
+    python_repo: ppa:deadsnakes/ppa
+    python_package: python3.8
     python_pip: python3-pip
-    python_python: /usr/bin/python3.6
+    python_python: /usr/bin/python3.8
 
 Dependencies
 ------------
